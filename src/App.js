@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
 import Header from './Components/Header';
-import MovieSuggestions from './Components/MovieSuggestions'
+import MovieSuggestions from './Components/MovieSuggestions';
+import MovieList from './Components/MovieList';
 
 
 class App extends Component {
@@ -10,8 +11,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-        watchList: []
+        watchList: [],
+
     }
+
+    this.addWatchList = this.addWatchList.bind(this)
+    this.deleteMovie = this.deleteMovie.bind(this)
+    this.updateStatus = this.updateStatus.bind(this)
+
   }
 
   addWatchList(movie){
@@ -21,11 +28,26 @@ class App extends Component {
   })
   }
 
+  deleteMovie(id){
+    axios.delete(`/api/movies/${id}`)
+    .then(response => {
+      this.setState({watchList: response.data})
+    })
+  }
+
+  updateStatus(id){
+    axios.put(`/api/movies/${id}`)
+    .then(response => {
+        this.setState({movieStatus: response.data})
+    })
+  }
+
   render(){
     return(
       <div>
         <Header />
-        <MovieSuggestions />
+        <MovieSuggestions add={this.addWatchList}/>
+        <MovieList myList={this.state.watchList} delete={this.deleteMovie} update={this.updateStatus}/>
       </div>
     )
   }

@@ -7,21 +7,23 @@ module.exports = {
         res.status(200).send(movieWatchList)
     },
     addMovieWatchList: (req, res) => {
-        const {id, title, image, summary} = req.body
-        movieWatchList.push({id, title, image, summary, watched: false})
-        console.log(movieWatchList)
+        // console.log(req.body)
+        const {movie} = req.body
+        movie.status = 'unwatched'
+        movieWatchList.push(movie)
         res.status(200).send(movieWatchList)
     },
     deleteMovie: (req, res) => {
         const {id} = req.params
         const index = movieWatchList.findIndex(movie => movie.id === +id)
         movieWatchList.splice(index, 1)
+        console.log(movieWatchList)
         res.status(200).send(movieWatchList)
     },
     watchMovie: (req, res) => {
         const {id} = req.params
         let index = movieWatchList.findIndex(movie => movie.id === +id)
-        movieWatchList[index].watched = true
+        movieWatchList[index].status = 'watched'
         res.status(200).send(movieWatchList)
     }
 }
