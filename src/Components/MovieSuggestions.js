@@ -23,7 +23,7 @@ class MovieSuggestions extends Component {
     render(){
         const list = this.state.suggestedList.map((element, index) => {return <DisplayList key={index} movie={element} add={this.props.add}/>});
         return(
-            <div>
+            <div className='suggestion-section'>
                 {list}
             </div>
         )

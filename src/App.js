@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Reset.css';
 import './App.css';
 import axios from 'axios';
 import Header from './Components/Header';
@@ -44,7 +45,7 @@ class App extends Component {
 
   render(){
     return(
-      <div>
+      <div className='main-page'>
         <Header />
         <MovieSuggestions add={this.addWatchList}/>
         <MovieList myList={this.state.watchList} delete={this.deleteMovie} update={this.updateStatus}/>
