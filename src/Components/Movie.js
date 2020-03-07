@@ -11,10 +11,10 @@ class Movie extends Component{
     render(){
         return(
             <div className='my-movies'>
-                <img className='poster-img' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
+                <img className='my-poster' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
                     <section className='delete-watched-buttons'>
                         <button onClick={() => this.props.update(this.props.movie.id)}>Watched</button>
-                        <button className='delete-button' onClick={() => this.props.delete(this.props.movie.id)}>Delete</button>
+                        <span className='delete-button' onClick={() => this.props.delete(this.props.movie.id)}>X</span>
                     </section>
             </div>
         )
