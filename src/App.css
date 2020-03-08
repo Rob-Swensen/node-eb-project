@@ -1,91 +1,91 @@
+.main-page {
+    background-image: linear-gradient(black, #540600, black)
+}
+
 .main-header {
     width: 100%;
-    height: 70px;
-    background-color: black;
-    color: #ffd012;
+    height: 15vh;
+}
+
+.suggestion-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Lobster', cursive;
-    font-size: 40px;
-    text-transform: uppercase;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: 600px;
+    padding-top: 10px;
 }
 
-.main-page {
-   background-color: black;
+.suggested-movie {
+    margin: 20px;
 }
 
-img {
-    width: 275px;
-    height: 425px;
+.suggest-poster {
+    height: 450px;
+    width: 325px;
+    border: 1px solid black;
 }
 
 .suggest-poster:hover {
     transform: scale(1.1);
-    border: 2px solid darkred
+    border: 1px solid #d40f00;
 }
 
-.my-poster {
-    width: 225px;
-    height: 375px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.suggestion-section {
-    display: flex;
-    overflow-y: scroll;
-    overflow-y: hidden;
-    background-repeat: repeat;
-    background-size: cover;
-    height: 500px;
-
-}
-
-.suggested-movie {
-    margin: 30px;
+.display-two {
+    height: 600px;
+    width: 100%;
 }
 
 .my-movie-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    background-color: black;
-    color: #ffd012;
-    font-family: 'Lobster', cursive;
-    font-size: 40px;
-    text-transform: uppercase;
+    margin: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
 }
 
 .display-my-list {
     display: flex;
-    overflow-y: scroll;
-    
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
-.display-two {
-    margin: 20px;
+.my-poster {
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    border: 2px solid black;
 }
 
-.my-movies {
-    margin: 0 20px
-}
-
-.delete-watch-buttons {
+.delete-play-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    padding-bottom: 10px;
 }
 
 .delete-button {
     color: red;
     font-family: sans-serif;
-    position: relative;
-    font-size: 20px;
-    font-weight: 700;
-    margin-left: 140px;
+    background-color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
+.play-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid red;
+
+}
+
+.watched-tag {
+    background-color: yellow;
+    position: absolute;
+}

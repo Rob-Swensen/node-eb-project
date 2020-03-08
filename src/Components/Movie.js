@@ -9,15 +9,23 @@ class Movie extends Component{
 
 
     render(){
-        return(
-            <div className='my-movies'>
-                <img className='my-poster' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
-                    <section className='delete-watched-buttons'>
-                        <button onClick={() => this.props.update(this.props.movie.id)}>Watched</button>
-                        <span className='delete-button' onClick={() => this.props.delete(this.props.movie.id)}>X</span>
-                    </section>
+        if(this.props.movie.status === 'watched')
+            {return( 
+            <div>
+                <div className='watched-tag'>Watched</div>
+                <img className='my-poster watched-poster' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
+                <div className='delete-button delete-watched' onClick={() => this.props.delete(this.props.movie.id)}>X</div>
             </div>
-        )
+            )}
+            else {return(
+                <div className='my-movies'>
+                <img className='my-poster' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
+                <section className='delete-play-buttons'>
+                    <img className='play-button' src={'https://i.stack.imgur.com/X2c0V.png'} onClick={() => this.props.update(this.props.movie.id)}/>
+                    <div className='delete-button' onClick={() => this.props.delete(this.props.movie.id)}>X</div>
+                </section>
+            </div>
+            )}
     }
 }
 

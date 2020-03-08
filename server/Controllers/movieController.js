@@ -25,5 +25,6 @@ module.exports = {
         let index = movieWatchList.findIndex(movie => movie.id === +id)
         movieWatchList[index].status = 'watched'
         res.status(200).send(movieWatchList)
+        console.log(movieWatchList)
     }
 }

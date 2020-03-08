@@ -39,11 +39,12 @@ class App extends Component {
   updateStatus(id){
     axios.put(`/api/movies/${id}`)
     .then(response => {
-        this.setState({movieStatus: response.data})
+        this.setState({watchList: response.data})
     })
   }
 
   render(){
+    console.log(this.state.watchList)
     return(
       <div className='main-page'>
         <Header />
