@@ -12,9 +12,12 @@ class Movie extends Component{
         if(this.props.movie.status === 'watched')
             {return( 
             <div>
-                <div className='watched-tag'>Watched</div>
                 <img className='my-poster watched-poster' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
-                <div className='delete-button delete-watched' onClick={() => this.props.delete(this.props.movie.id)}>X</div>
+                <div className='watched-tag'>Watched</div>
+                <section className='delete-play-buttons'> 
+                     <img className='play-button' src={'https://i.stack.imgur.com/X2c0V.png'} onClick={() => this.props.update(this.props.movie.id)}/>
+                    <div className='delete-button delete-watched' onClick={() => this.props.delete(this.props.movie.id)}>X</div>
+                </section>
             </div>
             )}
             else {return(
