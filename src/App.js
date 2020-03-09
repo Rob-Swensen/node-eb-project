@@ -30,10 +30,13 @@ class App extends Component {
   }
 
   addWatchList(movie){
-    axios.post('/api/movies', {movie})
-    .then(response => {
-    this.setState({watchList: response.data})
-  })
+    let index = this.state.watchList.findIndex(element => element.title.includes(movie.title))
+    if(index === -1){
+      axios.post('/api/movies', {movie})
+      .then(response => {
+      this.setState({watchList: response.data})
+    })
+    } else {alert('Movie Already Added')}
   }
 
   deleteMovie(id){

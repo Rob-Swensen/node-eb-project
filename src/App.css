@@ -92,6 +92,7 @@
 .delete-button-section {
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
 }
 
 .delete-button {
@@ -132,12 +133,18 @@
     z-index: 3;
     top: 170px;
     left: 115px;
-    opacity: 85%;
+    opacity: 60%;
 
 }
 
+
+.play-button:hover {
+    transform: scale(1.3);
+    opacity: 90%;
+}
+
 .play-button:active {
-    transform: translateY(6px)
+    transform: translateY(8px)
 }
 
 .watched-tag {
