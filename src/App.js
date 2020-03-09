@@ -22,6 +22,13 @@ class App extends Component {
 
   }
 
+  componentDidMount(){
+    axios.get('api/movies')
+    .then(response => {
+      this.setState({watchList: response.data})
+    })
+  }
+
   addWatchList(movie){
     axios.post('/api/movies', {movie})
     .then(response => {
@@ -44,7 +51,7 @@ class App extends Component {
   }
 
   render(){
-    console.log(this.state.watchList)
+    // console.log(this.state.watchList)
     return(
       <div className='main-page'>
         <Header />

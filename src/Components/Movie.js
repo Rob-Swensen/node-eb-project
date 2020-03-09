@@ -11,7 +11,7 @@ class Movie extends Component{
     render(){
         if(this.props.movie.status === 'watched')
             {return( 
-            <div>
+            <div className='watched-movie-container'>
                 <img className='my-poster watched-poster' src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
                 <div className='watched-tag'>Watched</div>
                 <section className='delete-play-buttons'> 
