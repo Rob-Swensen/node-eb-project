@@ -89,12 +89,9 @@
     margin-bottom: 0px;
 }
 
-.delete-play-buttons {
+.delete-button-section {
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    align-items: center;
-    padding-bottom: 10px;
+    justify-content: center;
 }
 
 .delete-button {
@@ -104,7 +101,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    border: 1px solid red;
+    border: 2px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,12 +113,26 @@
     transform: translateY(6px);
 }
 
+.my-movies {
+    position: relative;
+}
+
+.delete-play-buttons {
+    display: flex;
+    justify-content: center;
+}
+
 .play-button {
-    height: 40px;
-    width: 40px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
-    border: 1px solid red;
+    border: 2px solid red;
     cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    top: 170px;
+    left: 115px;
+    opacity: 85%;
 
 }
 
@@ -132,7 +143,7 @@
 .watched-tag {
     background-color: red;
     left: 18px;
-    font-family: sans-serif;
+    font-family: 'Sen', sans-serif;
     width: 301px;
     margin-left: 17px;
     text-align: center;
